@@ -1,0 +1,179 @@
+:root {
+    --primary: #055492;
+    --text-color: #212529;
+    --text-color-200: #666;
+    --font-body: Open Sans, Arial, sans-serif;
+    --white: #fff;
+    --text-hover: #7cc5fd;
+    --gray-200: #ced4da;
+}
+
+#top-header {
+    background: var(--primary);
+    color: var(--white);
+    font-family: var(--font-body);
+    padding: 10px 0;
+}
+
+.top-header-items-wrap,
+.middle-header-items-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-item-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.top-header-inner-link-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 0.55rem;
+}
+
+.top-header-inner-link-wrap::after {
+    content: "";
+    height: 16px;
+    display: inline-block;
+    border-right: 2px solid var(--gray-200);
+    margin-left: 8px;
+}
+
+.top-header-inner-link-wrap .link-label:hover {
+    color: var(--text-hover);
+}
+
+.top-header-inner-link-wrap:last-child::after {
+    content: none;
+}
+
+.top-header-img-icon {
+    width: 16px !important;
+    height: auto !important;
+}
+
+.middle-header {
+    background: var(--white);
+    width: 100%;
+    font-family: var(--font-body);
+    padding: 13px 0 8px 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.middle-header-col-1 a {
+    width: 120px;
+}
+
+.middle-header .app-logo {
+    width: 120px;
+    height: auto;
+}
+
+.middle-header-col-3 {
+    display: none;
+}
+
+.desktop-nav-list,
+.desktop-nav-list-item {
+    display: inline-block;
+    list-style: none;
+    padding-right: 1rem;
+    color: var(--primary);
+    transition: 1.2s linear;
+    position: relative;
+}
+
+.desktop-nav-list:last-child,
+.desktop-nav-list-item:last-child {
+    padding-right: 0;
+}
+
+.middle-header-col-2 a:hover {
+    color: var(--text-color) !important;
+    border-bottom: 1px solid var(--text-color) !important;
+}
+
+
+.hamburger-menu-btn {
+    display: none;
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 0.14rem;
+}
+
+.hamburger-close-menu-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 0.14rem;
+}
+
+.hamburger-menu-btn svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-weight: bold;
+}
+
+.hamburger-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.responsive-nav-menu-list {
+    list-style: none;
+}
+
+.responsive-nav-menu-list .responsive-nav-menu-list-item {
+    margin-bottom: 1.7rem;
+    padding-bottom: 0.39rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.responsive-nav-menu-list .responsive-nav-menu-list-item:last-child {
+    border-bottom: 0;
+}
+
+.responsive-nav-menu-list-item .responsive-nav-menu-link:hover {
+    color: var(--text-color);
+}
+
+.desktop-nav-list-item a {
+    font-size: 16px;
+}
+
+@media screen and (max-width:849px) {
+
+    .top-header-col-2,
+    .middle-header-col-2 {
+        display: none;
+    }
+
+    .top-header-col-1 {
+        text-align: center;
+    }
+
+    .top-header-items-wrap {
+        justify-content: center;
+    }
+
+    .top-header-items-wrap .link-label {
+        font-size: 13px;
+    }
+
+    .hamburger-menu-btn,
+    .middle-header-col-3 {
+        display: inline-block;
+    }
+
+    .middle-header .app-logo {
+        width: 100px;
+    }
+
+
+}

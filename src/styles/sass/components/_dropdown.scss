@@ -1,0 +1,67 @@
+@use "../base/variable" as *;
+@use "../base/mixins" as *;
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+
+  .dropdown-toggle-btn {
+    background-color: #fff;
+    color: #000;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 120px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    .dropdown-icon {
+      width: 18px;
+      height: 18px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .dropdown-chevron {
+      margin-left: auto;
+      font-size: 0.75rem;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    z-index: 100;
+    margin-top: 0.5rem;
+    background-color: white;
+    border: 1px solid #ddd; 
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 100%;
+    padding: 0.5rem 0;
+
+    .dropdown-item {
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      .dropdown-icon {
+        width: 18px;
+        height: 18px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      &:hover,
+      &.active {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+}

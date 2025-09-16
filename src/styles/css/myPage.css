@@ -1,0 +1,53 @@
+:root {
+    --primary: #055492;
+    --text-color: #212529;
+    --text-color-200: #666;
+    --font-body: Open Sans, Arial, sans-serif;
+    --white: #fff;
+    --text-hover: #7cc5fd;
+    --gray-200: #ced4da;
+}
+
+body {
+    color: var(--text-color);
+}
+
+.page-header-wrap {
+    margin-bottom: 1rem;
+}
+
+.page-header-content-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.myPage-title {
+    font-size: 22px;
+    color: var(--text-color);
+}
+
+.page-item-wrap {
+    display: flex !important;
+    align-items: center;
+    column-gap: 0.66rem;
+}
+
+
+@media screen and (max-width:999px) {
+    .page-header-content-wrap {
+        flex-direction: column-reverse;
+        align-items: start;
+        row-gap: 0.75rem;
+    }
+
+    .page-header-content-wrap button {
+        font-size: 0.85rem;
+    }
+
+    .myPage-title {
+        font-size: 1rem;
+    }
+
+
+}

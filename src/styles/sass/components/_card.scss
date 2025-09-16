@@ -1,0 +1,51 @@
+@use "../base/variable" as *;
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  &--shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &--hover:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  &--no-padding {
+    padding: 0 !important;
+  }
+
+  &--bordered {
+    border: 1px solid #ccc;
+  }
+
+  &--center {
+    align-items: center;
+    text-align: center;
+  }
+
+  &__header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__body {
+    flex: 1;
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  &__footer {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #888;
+  }
+}

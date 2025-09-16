@@ -1,0 +1,115 @@
+@use "base/variable" as *;
+.dashboard-header {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: calc(100% - 260px);
+  position: fixed;
+  top: 0;
+  left: 260px;
+  z-index: 900;
+
+  transition: 0.5s linear;
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    #appSidebarToggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: $text-color;
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: $text-color;
+      }
+    }
+
+    .header-title {
+      font-size: 19px;
+      margin-bottom: 0;
+      font-weight: 600;
+      color: $text-color;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .header-icon {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .header-profile {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img {
+        width: 43px;
+        height: 43px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-transform: capitalize;
+
+        li.username {
+          font-weight: 600;
+          font-size: 1rem;
+          line-height: 1.59;
+        }
+
+        li.role {
+          text-align: center;
+          font-size: 12px;
+          color: #777;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .dashboard-header .header-left .header-title,
+  .dashboard-header .header-right .header-icon {
+    display: none;
+  }
+  .dashboard-header .header-right .header-profile ul li.username {
+    font-weight: 600;
+    font-size: 0.88rem;
+  }
+  .dashboard-header .header-right .header-profile img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .dashboard-header {
+    left: 0;
+    width: 100%;
+  }
+
+  .dashboard-header .header-right .header-profile ul li.role {
+    font-size: 0.85rem;
+    color: #777;
+  }
+}
+
+.app-header-spc-remove {
+  left: 150px;
+  width: calc(100% - 150px);
+}

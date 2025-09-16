@@ -1,0 +1,107 @@
+:root {
+    --primary: #055492;
+    --text-color: #212529;
+    --text-color-200: #666;
+    --font-body: Open Sans, Arial, sans-serif;
+    --white: #fff;
+    --text-hover: #7cc5fd;
+    --gray-200: #ced4da;
+    --font-size-base: 16px;
+    --font-size-small: 0.75rem;
+    --spacing-section: 80px 0 30px;
+
+}
+
+#guaranteeBadge-section {
+    width: 100%;
+    display: inline-block;
+    padding: var(--spacing-section);
+}
+
+#guaranteeBadge-section .guarantee-section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2.85rem;
+}
+
+#guaranteeBadge-section .guarantee-section-heading {
+    text-align: center;
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.guarantee-section-divider {
+    width: 124px;
+    height: 4px;
+    background: var(--primary);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    animation: expand 1s ease-in-out;
+
+}
+
+.guarantee-badges-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.guarantee-badge-col {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.guarantee-badge-col img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 0.75rem;
+}
+
+.guarantee-badge-col .guarantee-badge-label {
+    font-size: var(--font-size-base);
+    color: #222;
+    font-weight: bold;
+}
+
+
+@keyframes expand {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 124px;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:849px) {
+    #guaranteeBadge-section {
+        padding: 60px 0;
+    }
+
+    .guarantee-badges-wrap {
+        grid-template-columns: repeat(2, 1fr);
+        place-content: center;
+        place-items: center;
+        row-gap: 0.55rem;
+    }
+
+    .guarantee-badge-col .guarantee-badge-label {
+        font-size: var(--font-size-small);
+    }
+
+    .guarantee-badge-col img {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -1,0 +1,93 @@
+/* ===== BASE SIDEBAR STYLE ===== */
+.sidebar {
+    position: fixed;
+    background: #ffffff;
+    padding: 1.5rem;
+    z-index: 999;
+    transition: transform 0.4s ease-in-out;
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   RIGHT SIDEBAR
+================================== */
+.sidebar--right {
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    transform: translateX(100%);
+}
+
+.sidebar--right.sidebar--active {
+    transform: translateX(0);
+}
+
+/* ===============================
+   LEFT SIDEBAR
+================================== */
+.sidebar--left {
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    transform: translateX(-100%);
+}
+
+.sidebar--left.sidebar--active {
+    transform: translateX(0);
+}
+
+/* ===============================
+   TOP SIDEBAR
+================================== */
+.sidebar--top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    transform: translateY(-100%);
+}
+
+.sidebar--top.sidebar--active {
+    transform: translateY(0);
+}
+
+/* ===============================
+   BOTTOM SIDEBAR
+================================== */
+.sidebar--bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    transform: translateY(100%);
+}
+
+.sidebar--bottom.sidebar--active {
+    transform: translateY(0);
+}
+
+/* ===============================
+   OVERLAY (common for all)
+================================== */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: #f3f4f675;
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-overlay--active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.full-width-sidebar {
+    display: inline-block;
+    width: 100%;
+}

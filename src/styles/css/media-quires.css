@@ -1,0 +1,80 @@
+/* mobile css */
+@media screen and (max-width:999px) {
+    .main-container {
+        max-width: 100%;
+    }
+
+    .container-spc {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* 150% room  responsive css*/
+@media (min-width:1000px) and (max-width:1200px) {
+
+    .main-container,
+    .package-plan-align-container {
+        max-width: 950px !important;
+    }
+
+    .desktop-nav-list-item a {
+        font-size: 0.75rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(3, minmax(230px, 1fr)) !important;
+    }
+}
+
+/* 125% room responsive css */
+
+@media (min-width:1200px) and (max-width:1300px) {
+    .desktop-nav-list-item a {
+        font-size: 0.95rem;
+    }
+
+    .package-plan-align-container {
+        max-width: 1120px !important;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(4, minmax(230px, 1fr)) !important;
+    }
+}
+
+/* 110% room responsive css */
+@media (min-width:1300px) and (max-width:1400px) {}
+
+/* 175% room responsive css */
+@media (min-width:850px) and (max-width:999px) {
+
+    .main-container,
+    .package-plan-align-container {
+        max-width: 900px !important;
+    }
+
+    .middle-header .app-logo {
+        width: 80px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
+    }
+
+    .top-header-items-wrap .link-label,
+    .desktop-nav-list-item a,
+    .guarantee-badge-col .guarantee-badge-label {
+        font-size: 0.75rem !important;
+    }
+
+    .top-header-col-1 {
+        padding-left: 1rem !important;
+    }
+
+    .top-header-col-2 {
+        padding-right: 1rem !important;
+    }
+
+
+}

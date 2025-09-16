@@ -1,0 +1,159 @@
+:root {
+    --primary: #055492;
+    --text-color: #212529;
+    --text-color-200: #666;
+    --font-body: Open Sans, Arial, sans-serif;
+    --white: #fff;
+    --text-hover: #7cc5fd;
+    --gray-200: #ced4da;
+}
+
+#app-main-footer {
+    background: var(--white);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 14px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.footer-layout-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+    padding: 55px 0 32px 0;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col-heading {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: var(--text-color-200);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+.footer-links .facebook-link:hover,
+.footer-links .twitter-link:hover {
+    color: var(--primary);
+}
+
+.footer-contact {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    color: var(--text-color-200);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-item:hover {
+    color: var(--primary);
+}
+
+.footer-contact-icon {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.footer-layout-grid .debits-card-img {
+    width: 200px;
+}
+
+.footer-bottom-section {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 0;
+}
+
+.footer-bottom-sec-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-section .footer-bottom-link-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 0.75rem;
+}
+
+.footer-bottom-link-wrap a:not(:first-child)::before {
+    content: "";
+    border-right: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.footer-bottom-link-wrap a:hover {
+    color: var(--text-hover);
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-layout-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .footer-layout-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-col-heading {
+        margin-top: 1.5rem;
+    }
+
+    .footer-col,
+    .footer-col img,
+    .footer-layout-grid .debits-card-img {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-bottom-sec-wrap {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .footer-bottom-section .footer-bottom-link-wrap {
+        display: none;
+    }
+}

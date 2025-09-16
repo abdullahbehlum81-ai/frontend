@@ -1,0 +1,50 @@
+@use "base/variable" as *;
+@use "base/mixins" as *;
+.page-not-found-container {
+  height: 100vh;
+  .page-not-found-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 150px;
+    text-align: center;
+    h1 {
+      font-size: 65px;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 1.5rem;
+    }
+    .page-not-found-btn-wrap {
+      display: flex;
+      align-items: center;
+      column-gap: 1.2rem;
+      a {
+        display: flex;
+        align-items: center;
+        column-gap: 0.66rem;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .page-not-found-btn-wrap {
+        flex-direction: column;
+        a {
+          width: 100%;
+        }
+      }
+      h1 {
+        margin-bottom: 1rem;
+      }
+      p {
+        width: 320px;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

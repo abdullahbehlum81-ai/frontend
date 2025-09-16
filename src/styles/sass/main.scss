@@ -1,0 +1,70 @@
+@use "base/variable" as *;
+@use "base/mixins" as *;
+@use "components/button";
+@use "components/dropdown";
+@use "components/card";
+@use "components/switch";
+@use "page-not-found";
+@use "header";
+@use "left-sidebar";
+
+#app-layout-2-wrap {
+  display: flex;
+}
+
+.main-content-wrapper {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  @media screen and (max-width: 999px) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+#app-panel-content {
+  padding-top: 169px;
+  padding-bottom: 2rem;
+  min-height: 100vh;
+  background: #f8f9fa;
+  @media screen and (max-width: 999px) {
+    padding: 140px 1rem 0 1rem;
+  }
+}
+
+#app-footer {
+  padding: 1rem;
+  font-size: 14px;
+  color: #666;
+  background: white;
+  .layout-2-footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    .layout-2-footer-col-2 {
+      display: flex;
+      align-items: center;
+      a {
+        &::before {
+          content: "";
+          margin-right: 1rem;
+          padding-right: 1rem;
+          border-right: 1px solid #ccc;
+        }
+        &:first-child {
+          &::before {
+            content: none;
+          }
+        }
+      }
+
+      @media screen and (max-width: 810px) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 810px) {
+      display: inline-block;
+    }
+  }
+}

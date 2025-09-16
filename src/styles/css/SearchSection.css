@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+    --primary: #055492;
+    --text-color: #212529;
+    --text-color-200: #666;
+    --font-body: Open Sans, Arial, sans-serif;
+    --white: #fff;
+    --text-hover: #7cc5fd;
+    --gray-200: #ced4da;
+}
+
+.domain-section {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+    text-align: center;
+    font-family: var(--font-body);
+}
+
+.domain-title {
+    font-size: 1.9rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.domain-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.domain-input {
+    flex: 1 1 60%;
+    padding: 16px 20px;
+    font-size: 1rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 5px;
+    outline: none;
+}
+
+.domain-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 16px 32px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.domain-btn:hover {
+    background-color: #063970;
+}
+
+@media screen and (max-width: 849px) {
+    .domain-form {
+        flex-direction: column;
+    }
+
+    .domain-input {
+        width: 100%;
+    }
+
+    .domain-btn {
+        width: 100%;
+    }
+}
