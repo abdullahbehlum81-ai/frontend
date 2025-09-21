@@ -1,18 +1,18 @@
 "use client";
+import toast from "react-hot-toast";
 import { LoginFormFields } from "@/config/FormFields/Login";
 import { LoginSchema } from "@/config/FormValidation/Login";
-import { ADMIN_AUTH_TOKEN, ADMIN_PATH } from "@/constant";
+import { ADMIN_AUTH_TOKEN } from "@/constant";
 import { DynamicFormRenderer } from "@/helpers/form";
 import { LoginInterface } from "@/types/auth";
-import AxiosInstance from "@/lib/axiosClient";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { BiLogIn } from "react-icons/bi";
 import { appConfig } from "@/constant";
 import { getCookie } from "@/utils/getCookie";
+import { RootLogin } from "@/service/AppService";
 
 const DEFAULT_VALUES: LoginInterface = {
   email: "",
@@ -37,20 +37,18 @@ function LoginForm() {
 
   const handleLoginForm = async (data: LoginInterface) => {
     const adminToken = getCookie(ADMIN_AUTH_TOKEN);
-    let Token;
     if (adminToken) {
       navigate.push(DASHBOARD);
     } else {
-      const { data: response } = await AxiosInstance.post(
-        `${ADMIN_PATH}/login`,
-        data
-      );
-      if (response?.success && response?.token) {
-        toast.success(response?.message);
-        localStorage.setItem(ADMIN_AUTH_TOKEN, response?.token);
+      const { token, success, user, msg } = await RootLogin(data);
+      if (success && token) {
+        toast.success(msg);
+        localStorage.setItem(ADMIN_AUTH_TOKEN, token);
+        localStorage.setItem("current_user", user || "");
         navigate.push(DASHBOARD);
       } else {
         localStorage.removeItem(ADMIN_AUTH_TOKEN);
+        localStorage.removeItem("current_user");
         navigate.push(LOGIN);
       }
       reset(DEFAULT_VALUES);

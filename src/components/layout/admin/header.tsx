@@ -9,6 +9,7 @@ type HeaderProps = {
 
 function Header({ setOpen }: HeaderProps) {
   const { headerTitle } = useHeaderTitle();
+  const profile = localStorage.getItem("current_user");
   return (
     <header id="app-header">
       <div className="dashboard-header">
@@ -32,7 +33,7 @@ function Header({ setOpen }: HeaderProps) {
               priority
             />
             <ul>
-              <li className="username">Backend@efzuone.com</li>
+              <li className="username">{profile}</li>
               <li className="role">Admin</li>
             </ul>
           </div>

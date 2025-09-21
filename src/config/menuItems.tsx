@@ -8,8 +8,8 @@ import {
 import { RiPagesLine } from "react-icons/ri";
 
 export interface MenuItem {
-  name?: string;
-  path?: string;
+  name: string;
+  path: string;
   icon?: React.ReactNode;
   section?: string;
 }

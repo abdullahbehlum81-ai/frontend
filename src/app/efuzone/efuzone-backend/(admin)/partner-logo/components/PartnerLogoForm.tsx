@@ -79,20 +79,12 @@ function PartnerLogoForm({ id }: FormProps) {
     }
     navigate.push(`${PANNEL_URL_PATH}/partner-logo`);
   };
-  const placeholderImg = "https://placehold.co/300x150";
-
-  const imageSrc =
-    ClientLogo instanceof File
-      ? URL.createObjectURL(ClientLogo)
-      : typeof ClientLogo === "string"
-      ? ClientLogo
-      : placeholderImg;
 
   useEffect(() => {
     if (id) {
       getSingleLogo(id).then(({ singleItem }) => {
         reset({
-          logo: `${BASEURL}${singleItem.logo}`,
+          logo: `${singleItem.logo}`,
           alt: singleItem?.alt || "",
         });
       });
@@ -109,19 +101,11 @@ function PartnerLogoForm({ id }: FormProps) {
           fields={FormField}
           instanceId="partner-logo-upload"
           errors={errors}
+          placeholderImage="300x150"
+          width={300}
+          height={150}
+          previewClassName="myPage-img-preview page-header-wrap"
         />
-
-        <div className="myPage-img-preview page-header-wrap">
-          <Image
-            src={imageSrc}
-            alt="Logo"
-            width={300}
-            height={150}
-            style={{ objectFit: "contain" }}
-            unoptimized
-          />
-        </div>
-
         <div className="myPage-align-item-end ">
           <button
             type="submit"

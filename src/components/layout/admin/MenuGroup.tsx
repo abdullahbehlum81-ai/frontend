@@ -1,16 +1,11 @@
 import Link from "next/link";
-import { ReactNode } from "react";
-
-interface itemArray {
-  path: string;
-  icon: ReactNode;
-  name: string;
-}
+import { MenuItem } from "@/config/menuItems";
 interface MenuProps {
   section: string;
-  items: itemArray[];
+  items: MenuItem[];
   activePage: string | any;
 }
+
 function MenuGroup({ section, items, activePage }: MenuProps) {
   return (
     <div className="sidebar-section">
@@ -22,7 +17,7 @@ function MenuGroup({ section, items, activePage }: MenuProps) {
           <li key={`layout2-group-menu-${item.path}-${idx}`}>
             <Link
               className={
-                 activePage === item.path ? "sidebar-active-page-menu" : ""
+                activePage === item.path ? "sidebar-active-page-menu" : ""
               }
               href={item.path}
             >

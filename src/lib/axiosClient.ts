@@ -6,7 +6,6 @@ import axios, {
 } from "axios";
 import toast from "react-hot-toast";
 import { API_VERSION_PATH, BASEURL, ADMIN_AUTH_TOKEN } from "@/constant";
-import { useApiToken } from "@/hook/useApiToken";
 const API_BASE_URL = `${BASEURL}/${API_VERSION_PATH}`;
 
 // --- Create Axios Instance ---
@@ -26,15 +25,6 @@ AxiosInstance.interceptors.request.use(
         if (typeof window !== "undefined") {
             // let efuzoneToken ;
             const adminToken = localStorage.getItem(ADMIN_AUTH_TOKEN);
-
-            // if (!efuzoneToken) {
-            //     try {
-            //         const { token } = await useApiToken();
-            //         efuzoneToken = token;
-            //     } catch (error) {
-            //         console.error("Error fetching efuzone token:", error);
-            //     }
-            // }
 
             if (adminToken && config.headers) {
                 config.headers.Authorization = `Bearer ${adminToken}`;
