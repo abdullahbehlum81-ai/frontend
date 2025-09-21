@@ -1,0 +1,61 @@
+#partner-logo-section {
+    display: inline-block;
+    width: 100%;
+    padding: 80px 0;
+}
+
+#partner-logo-section .partner-logo-header-section {
+    margin-bottom: 1.8rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.partner-logo-header-section h2 {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+
+.partner-logos-section-divider {
+    width: 204px;
+    height: 4px;
+    background: var(--primary);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    animation: expand 1s ease-in-out;
+
+}
+
+
+.partner-logo-slider {
+    margin-top: 1.8rem !important;
+    width: 100% !important;
+
+}
+
+.partner-logo-slider .swiper-pagination {
+    position: static !important;
+    margin-top: 35px !important;
+}
+
+.partner-logo-slider .swiper-pagination-bullet {
+    background: var(--text-hover) !important;
+}
+
+.partner-logo-slider .swiper-pagination-bullet-active {
+    background: var(--primary) !important;
+}
+
+@media screen and (max-width:850px) {
+    #partner-logo-section  {
+        padding: 40px 0;
+    }
+
+    .partner-logo-header-section h2 {
+        font-size: 32px;
+    }
+}

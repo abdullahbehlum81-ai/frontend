@@ -1,24 +1,20 @@
 import { PANNEL_URL_PATH } from "@/constant/constant";
-import { MdDashboard } from "react-icons/md";
-import { MdBusiness } from "react-icons/md";
-import { MdPeople } from "react-icons/md";
-import { MdWeb } from "react-icons/md";
-import { MdDns } from "react-icons/md";
-import { MdStorage } from "react-icons/md";
-import { MdSecurity } from "react-icons/md";
-import { MdStars } from "react-icons/md";
-import { MdImage } from "react-icons/md";
-import { MdFormatQuote } from "react-icons/md";
-import { MdOutlineTextSnippet } from "react-icons/md";
-import { MdLogout } from "react-icons/md";
+import { FaSitemap } from "react-icons/fa";
+import {
+  MdDashboard,
+  MdImage,
+  MdOutlineVerticalAlignBottom,
+} from "react-icons/md";
+import { RiPagesLine } from "react-icons/ri";
 
 export interface MenuItem {
-  name: string;
-  path: string;
-  icon: React.ReactNode;
+  name?: string;
+  path?: string;
+  icon?: React.ReactNode;
   section?: string;
 }
 
+const DefaultParams = "?search&page=1&perPage=10";
 export const rawMenuItems: MenuItem[] = [
   {
     name: "Dashboard",
@@ -26,82 +22,35 @@ export const rawMenuItems: MenuItem[] = [
     icon: <MdDashboard />,
   },
   {
-    name: "Web Hosting",
-    path: "/web-hosting",
-    icon: <MdWeb />,
-    section: "Hosting",
+    section: "Brand Assets",
+    name: "Client Logos",
+    path: `/client-logos${DefaultParams}`,
+    icon: <MdImage />,
   },
   {
-    name: "VPS Hosting",
-    path: "/vps-hosting",
-    icon: <MdDns />,
-    section: "Hosting",
-  },
-  {
-    name: "Dedicated Server",
-    path: "/dedicated-server",
-    icon: <MdStorage />,
-    section: "Hosting",
-  },
-  {
-    name: "Company Profile",
-    path: "/company-profile",
-    icon: <MdBusiness />,
-    section: "Company",
-  },
-  {
-    name: "About Us",
-    path: "/about-us",
-    icon: <MdPeople />,
-    section: "Company",
-  },
-  {
-    name: "Our Clients",
-    path: "/our-clients",
-    icon: <MdStars />,
-    section: "Company",
-  },
-  {
-    name: "Why Choose Us?",
-    path: "/why-choose-us",
-    icon: <MdSecurity />,
-    section: "Company",
+    section: "Brand Assets",
+    name: "Partner Logos",
+    path: `/partner-logo${DefaultParams}`,
+    icon: <MdImage />,
   },
 
   {
-    name: "Hero Section",
-    path: "/hero",
-    icon: <MdImage />,
+    section: "CMS",
+    name: "Pages",
+    icon: <RiPagesLine />,
+    path: `/cms/pages${DefaultParams}`,
   },
   {
-    name: "Hosting Packages",
-    path: "/packages",
-    icon: <MdStorage />,
+    section: "CMS",
+    name: "Navigation",
+    icon: <FaSitemap />,
+    path: `/cms/navigation${DefaultParams}`,
   },
   {
-    name: "Guarantee Badges",
-    path: "/badges",
-    icon: <MdStars />,
-  },
-  {
-    name: "Testimonials",
-    path: "/testimonials",
-    icon: <MdFormatQuote />,
-  },
-  {
-    name: "Client Logos",
-    path: "/client-logos",
-    icon: <MdImage />,
-  },
-  {
-    name: "Footer Content",
-    path: "/footer",
-    icon: <MdOutlineTextSnippet />,
-  },
-  {
-    name: "Logout",
-    path: "/logout",
-    icon: <MdLogout />,
+    section: "CMS",
+    name: "Footer Navigation",
+    icon: <MdOutlineVerticalAlignBottom />,
+    path: `/menu/footer-navigation${DefaultParams}`,
   },
 ];
 

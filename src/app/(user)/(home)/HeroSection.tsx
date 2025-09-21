@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useApiToken } from "@/hook/useApiToken";
 
 const slideData = [
   {
@@ -59,6 +60,7 @@ const slideData = [
 ];
 
 function HeroSection() {
+
   if (!slideData || slideData.length === 0) return null;
 
   if (slideData.length === 1) {
@@ -80,7 +82,7 @@ function HeroSection() {
               ))}
             </ul>
             <div className="hero-cta">
-              <a href="#packages" className="btn-primary">
+              <a href="#choose-hosting-plan-section" className="btn-primary">
                 Get Started
               </a>
               <a href="#domain-search" className="btn-secondary">
@@ -131,7 +133,7 @@ function HeroSection() {
                   ))}
                 </ul>
                 <div className="hero-cta">
-                  <a href="#packages-plans" className="btn-primary">
+                  <a href="#choose-hosting-plan-section" className="btn-primary">
                     Get Started
                   </a>
                   <a href="#domain-search" className="btn-secondary">

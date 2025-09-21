@@ -13,13 +13,25 @@ body {
 }
 
 .page-header-wrap {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .page-header-content-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.myPage-header-col-1 .myPage-title {
+    margin-bottom: 0.69rem;
+}
+
+.myPage-card {
+    padding: 10px 0;
+}
+
+.myPage-mt {
+    margin-top: 0.88rem;
 }
 
 .myPage-title {
@@ -33,6 +45,86 @@ body {
     column-gap: 0.66rem;
 }
 
+.myPage-align-item-end {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.myPage-img-preview {
+    padding-top: 1.2rem;
+}
+
+.page-form-banner-preview img {
+    width: 100%;
+}
+
+.myPage-img-preview img {
+    border: 1px dashed #055492;
+}
+
+.myPage-badge-btn {
+    background: var(--primary);
+    color: var(--white);
+    transition: 1.8s linear;
+    padding: 4px 8px;
+}
+
+.table-action-btn-wrap {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-action-btn-wrap svg {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #055492;
+}
+
+.table-action-btn-wrap svg:hover {
+    color: #043f72;
+}
+
+.action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #bbe0f9;
+    /* lightened primary */
+    color: #055492;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: #055492;
+    color: #ffffff;
+}
+
+.action-btn svg {
+    width: 16px;
+    height: 16px;
+    color: inherit;
+}
+
+.create-page-form-btn svg {
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+}
+
+.mytable-status-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 @media screen and (max-width:999px) {
     .page-header-content-wrap {
@@ -49,5 +141,31 @@ body {
         font-size: 1rem;
     }
 
+    .page-header-wrap {
+        margin-bottom: 1rem;
+    }
+
+    .myPage-img-preview,
+    .myPage-img-preview img {
+        width: 100%;
+    }
+
+    .myPage-img-preview {
+        padding-top: 0.6rem;
+    }
+
+    .table-action-btn-wrap {
+        gap: 0.25rem;
+    }
+
+    .action-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .action-btn svg {
+        width: 14px;
+        height: 14px;
+    }
 
 }

@@ -5,15 +5,17 @@ import Header from "./header";
 import Footer from "./footer";
 import { HeaderTitleProvider } from "@/context/HeaderTitleContext";
 import dynamic from "next/dynamic";
-const Sidebar = dynamic(() => import("./sidebar"), { ssr: false });
+import NextTopLoader from "nextjs-toploader";
+import { ToastProvider } from "@/app/providers";
+const Sidebar = dynamic(() => import("./sidebar"));
 function LayoutContainerAdmin({ children }: Readonly<{ children: ReactNode }>) {
   const [Open, setOpen] = useState(true);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 999) {
-        setOpen(false); // On mobile: close sidebar
+        setOpen(false);
       } else {
-        setOpen(true); // On desktop: keep sidebar open
+        setOpen(true);
       }
     };
 
@@ -23,6 +25,13 @@ function LayoutContainerAdmin({ children }: Readonly<{ children: ReactNode }>) {
   }, []);
   return (
     <HeaderTitleProvider>
+      <ToastProvider />
+      <NextTopLoader
+        showAtBottom={false}
+        showSpinner={false}
+        color="#055492"
+        height={4}
+      />
       <Sidebar Open={Open} />
       <div className="main-content-wrapper">
         <Header setOpen={setOpen} />

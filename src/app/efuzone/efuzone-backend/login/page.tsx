@@ -1,8 +1,7 @@
 import { IMAGES_FOLDER_PATH } from "@/constant/constant";
 import Image from "next/image";
 import LoginForm from "./LoginForm";
-
-function LoginPage() {
+async function LoginPage() {
   return (
     <div id="auth-login-page">
       <div className="auth-page-container auth-page-spc ">

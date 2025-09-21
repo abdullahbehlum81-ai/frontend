@@ -1,0 +1,143 @@
+:root {
+    --primary: #055492;
+    --text-color: #212529;
+    --text-color-200: #666;
+    --font-body: Open Sans, Arial, sans-serif;
+    --white: #fff;
+    --text-hover: #7cc5fd;
+    --gray-200: #ced4da;
+}
+
+#choose-hosting-plan-section {
+    display: inline-block;
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+#choose-hosting-plan-section .choose-hosting-sec-container {
+    text-align: center;
+}
+
+#choose-hosting-plan-section .choose-hosting-sec-header {
+    margin-bottom: 3.5rem;
+}
+
+.choose-hosting-sec-container h2 {
+    font-size: 33px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+}
+
+.choose-hosting-sec-container p {
+    margin-bottom: 0.75rem;
+}
+
+.choose-hosting-sec-container .guarantee-text {
+    color: var(--primary);
+    font-weight: bold;
+
+}
+
+.choose-hosting-btn-wrap {
+    column-gap: 1.22rem;
+    margin-top: 24px;
+    margin-bottom: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--white);
+    border-radius: 6px;
+    width: max-content;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 30px 0px #EDF5FF;
+}
+
+.choose-hosting-btn {
+    border-radius: 6px;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    transition: all 0.4s ease-out 0s;
+}
+
+.active-hosting-btn {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.domain-package-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 1.55rem;
+}
+
+.domain-package-layout .domain-package-card {
+    background: var(--white);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 40px;
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.domain-package-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-5px);
+}
+
+.domain-package-card .domain-package-image {
+    margin-bottom: 25px;
+    max-width: 116px !important;
+}
+
+.domain-package-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.domain-package-card .domain-package-price {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    position: relative;
+    right: 33px;
+    color: var(--text-color) !important;
+}
+
+.domain-package-card .domain-package-btn {
+    width: auto;
+}
+
+.domain-package-btn .domain-package-btn-label {
+    display: flex;
+    align-items: center;
+    width: auto;
+    column-gap: 0.66rem;
+    padding: 12px;
+    border-radius: 0.46rem;
+    background: var(--primary);
+    color: var(--white);
+}
+
+@media screen and (max-width:850px) {
+    .domain-package-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .domain-package-layout .domain-package-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .domain-package-card .domain-package-price {
+        right: 0;
+    }
+}

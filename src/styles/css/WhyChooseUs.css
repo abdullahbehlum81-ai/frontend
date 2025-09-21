@@ -1,14 +1,41 @@
+:root {
+    --primary: #055492;
+    --text-color: #212529;
+    --text-color-200: #666;
+    --font-body: Open Sans, Arial, sans-serif;
+    --white: #fff;
+    --text-hover: #7cc5fd;
+    --gray-200: #ced4da;
+}
 .why-choose-us-section {
     background-color: #f9f9f9;
     padding: 60px 0;
 }
 
-.why-choose-us-section h2 {
+.why-choose-us-section .why-choose-us-sec-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2.85rem;
+}
+
+.why-choose-us-section .heading {
     text-align: center;
     font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: var(--text-color);
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.why-choose-us-section-divider {
+    width: 124px;
+    height: 4px;
+    background: var(--primary);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    animation: expand 1s ease-in-out;
+
 }
 
 .why-choose-sec-grid {
@@ -22,9 +49,12 @@
     padding: 24px;
     border-radius: 12px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
 }
 
 .why-choose-us-sec-card:hover {
@@ -44,16 +74,19 @@
 }
 
 .why-choose-us-sec-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 10px;
+    text-align: center;
     color: var(--text-color);
+    text-align: left;
 }
 
 .why-choose-us-sec-desc {
     font-size: 14px;
     color: var(--text-color-200);
     line-height: 1.6;
+    text-align: justify;
 }
 
 @media (min-width: 1024px) {

@@ -3,8 +3,19 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    formats: ["image/avif", "image/webp"],
-  },
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '8000',
+      },
+    ],
+  formats: ["image/avif", "image/webp"],
+},
   productionBrowserSourceMaps: false,
   compress: true,
   experimental: {

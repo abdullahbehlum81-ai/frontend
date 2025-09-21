@@ -65,11 +65,25 @@ interface DropdownItem {
     imageUrl?: string;
 }
 
+interface TextareaProps {
+    name?: string
+    id?: string
+    value?: string
+    disabled?: boolean,
+    fieldName?: string,
+    placeholder?: string;
+    onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
+    hookForm: boolean,
+    className?: string;
+    setValue?: React.Dispatch<any> | ((value: any) => void);
+
+}
 export type {
     InputFieldProps,
     PasswordFieldProps,
     SelectFieldProps,
     DialogProps,
     SwitchProps,
-    DropdownItem
+    DropdownItem,
+    TextareaProps
 };

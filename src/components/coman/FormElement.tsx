@@ -1,11 +1,18 @@
 import { cn } from "@/utils/utils";
-import { InputFieldProps, PasswordFieldProps, SelectFieldProps } from "./types";
+import {
+  InputFieldProps,
+  PasswordFieldProps,
+  SelectFieldProps,
+  TextareaProps,
+} from "./types";
 import React, { ChangeEvent, forwardRef, useState } from "react";
 import {
   EyeCloseIcon,
   EyeOpenIcon,
 } from "../../../public/static/assets/icon/icon";
 import ReactSelect from "react-select";
+import Image from "next/image";
+import { ImagePreviewProps } from "@/types";
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   (
     {
@@ -179,5 +186,73 @@ const SelectField: React.FC<SelectFieldProps> = ({
     />
   );
 };
+const TextAreaField: React.FC<TextareaProps> = ({
+  name,
+  id,
+  value,
+  disabled = false,
+  setValue,
+  fieldName,
+  placeholder = "Enter Description",
+  onChange,
+  hookForm = false,
+  className,
+}: TextareaProps) => {
+  const handleTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (setValue && fieldName) {
+      if (typeof setValue === "function") {
+        setValue((prev: any) => ({
+          ...prev,
+          [fieldName]: e.target.value,
+        }));
+      }
+    }
+  };
 
-export { InputField, PasswordField, SelectField };
+  return (
+    <textarea
+      name={name}
+      className={cn("form_control", className)}
+      id={id}
+      onChange={hookForm !== false ? onChange : handleTextarea}
+      value={value}
+      disabled={disabled}
+      placeholder={placeholder}
+    />
+  );
+};
+
+const ImagePreview: React.FC<ImagePreviewProps> = ({
+  fileImage,
+  placeholderImage = "/300x150",
+  className = "",
+  imageClassName = "",
+  alt = "preview",
+  width = 100,
+  height = 100,
+  unoptimized = false,
+  objectFit = "contain",
+}) => {
+  const imageSrc =
+    fileImage instanceof File
+      ? URL.createObjectURL(fileImage)
+      : typeof fileImage === "string"
+      ? fileImage
+      : "https://placehold.co" + placeholderImage;
+
+  return (
+    <div className={`${className} image-preview-wrapper`}>
+      <Image
+        src={imageSrc}
+        alt={alt}
+        width={width}
+        height={height}
+        className={imageClassName}
+        style={{ objectFit }}
+        unoptimized={unoptimized}
+      />
+    </div>
+  );
+};
+
+export { InputField, PasswordField, SelectField, TextAreaField, ImagePreview };

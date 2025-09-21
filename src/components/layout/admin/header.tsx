@@ -29,6 +29,7 @@ function Header({ setOpen }: HeaderProps) {
               alt="Efuzone"
               width={200}
               height={200}
+              priority
             />
             <ul>
               <li className="username">Backend@efzuone.com</li>

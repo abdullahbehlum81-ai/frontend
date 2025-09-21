@@ -23,7 +23,6 @@
 }
 
 html {
-    scroll-behavior: smooth;
     padding-right: 0px !important;
     overflow-y: auto !important;
 }
@@ -36,7 +35,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.2;
     font-size: 14px;
-    color: var(--text-color-200);
+    color: var(--text-color);
     background-color: var(--white);
     font-weight: 500;
     -webkit-font-smoothing: antialiased;
@@ -131,7 +130,9 @@ select:focus {
 
 .fm-group label {
     display: inline-block;
-    padding-bottom: 2px;
+    font-size: 13px;
+    padding-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .main-container {
@@ -152,4 +153,15 @@ select:focus {
 .header-nav-active-item {
     color: var(--text-color) !important;
     border-bottom: 1px solid var(--text-color) !important;
+}
+.css-tr4s17-option {
+    background: var(--primary) !important;
+}
+
+.css-d7l1ni-option {
+    background: var(--text-hover) !important;
+    color: var(--primary) !important;
+}
+.css-t3ipsp-control {
+    border-color: var(--primary) !important;
 }

@@ -8,36 +8,7 @@
     --gray-200: #ced4da;
 }
 
-#packages {
-    background-color: #f4f4f4;
-    padding: 50px 0;
-    color: var(--text-color);
-    font-family: var(--font-body);
-}
 
-#packages .package-sec-container {
-    text-align: center;
-}
-
-#packages .package-sec-header {
-    margin-bottom: 3.5rem;
-}
-
-.package-sec-container h2 {
-    font-size: 33px;
-    color: var(--primary);
-    font-weight: 700;
-    margin-bottom: 1.3rem;
-}
-
-.package-sec-container p {
-    margin-bottom: 0.75rem;
-}
-
-.package-sec-container .guarantee-text {
-    color: var(--primary);
-    font-weight: 700;
-}
 
 .pricing-grid {
     display: grid;

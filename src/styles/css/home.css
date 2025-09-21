@@ -114,12 +114,12 @@
 
 }
 
-.swiper-pagination-bullet {
+.hero-swiper .swiper-pagination-bullet {
     background: var(--white) !important;
     opacity: 0.6;
 }
 
-.swiper-pagination-bullet-active {
+.hero-swiper .swiper-pagination-bullet-active {
     opacity: 1;
 }
 
@@ -151,7 +151,7 @@
         height: auto;
     }
 
-    .swiper-pagination {
+    .hero-swiper .swiper-pagination {
         display: none !important;
     }
 
